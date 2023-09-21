@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="My team page">
+	<header>
+		<h1>The creative crew</h1>
+		<section>
+			<h2>Who we are</h2>
+			<p>We are team of creatively diverse. driven. innovative individuals working in various locations from the world.</p>
+		</section>
+	</header>
+</Layout>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins&display=swap');
+	header {
+		display: flex;
+		flex-direction: row;
+		gap: 2%;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 110px auto auto auto;
+	}
+	header > h1 {
+		font-family: 'PT Serif', serif;
+		font-size: 36px;
+		font-weight: 700;
+		letter-spacing: -1.62px;
+		width: 439px;
+	}
+	header > section {
+		display: grid;
+		max-width: 439px;
+		grid-template-rows: repeat(2, auto);
+	}
+	section > h2 {
+		font-family: 'Poppins', sans-serif;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+	section > p {
+		font-family: 'Poppins', sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		margin-top: 10px;
+	}
+
+	@media (max-width: 768px) {
+		section > p {
+			font-size: 14px;
+		}
+	}
+</style>
