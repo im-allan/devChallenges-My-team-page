@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import photo1 from "../assets/photo1.png";
+import photo2 from "../assets/photo2.png";
+import photo3 from "../assets/photo3.png";
+import photo4 from "../assets/photo4.png";
+import photo5 from "../assets/photo5.png";
+import photo6 from "../assets/photo6.png";
 ---
 
 <Layout title="My team page">
@@ -11,10 +16,38 @@ import Card from '../components/Card.astro';
 			<p>We are team of creatively diverse. driven. innovative individuals working in various locations from the world.</p>
 		</section>
 	</header>
+	<main>
+    <figure>
+      <img src={photo1.src} alt="">
+      <figcaption>Lorem, ipsum.</figcaption>
+    </figure>
+    <figure>
+      <img src={photo2.src} alt="">
+      <figcaption>Lorem, ipsum.</figcaption>
+    </figure>
+    <figure>
+      <img src={photo3.src} alt="">
+      <figcaption>Lorem, ipsum.</figcaption>
+    </figure>
+    <figure>
+      <img src={photo4.src} alt="">
+      <figcaption>Lorem, ipsum.</figcaption>
+    </figure>
+    <figure>
+      <img src={photo5.src} alt="">
+      <figcaption>Lorem, ipsum.</figcaption>
+    </figure>
+    <figure>
+      <img src={photo6.src} alt="">
+      <figcaption>Lorem, ipsum.</figcaption>
+      <span>Hola</span>
+    </figure>
+  </main>
 </Layout>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins&display=swap');
+	/* Header */
 	header {
 		display: flex;
 		flex-direction: row;
@@ -49,6 +82,10 @@ import Card from '../components/Card.astro';
 		font-weight: 400;
 		margin-top: 10px;
 	}
+
+	/* Main */
+
+	/* Media */
 
 	@media (max-width: 768px) {
 		section > p {
