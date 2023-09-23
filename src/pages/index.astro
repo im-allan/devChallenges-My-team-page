@@ -142,4 +142,48 @@ import photo6 from "../assets/photo6.png";
 	main > :nth-child(3n +2){
 		margin-top: 66px;
 	}
+
+	/* Media */
+
+	@media (max-width: 800px) {
+		section > p {
+			font-size: 14px;
+		}
+		header {
+			width: 95%;
+			margin: 71px auto auto auto;
+			justify-content: baseline;
+		}
+		header > h1 {
+			width: 439px;
+		}
+
+		figure > img {
+			width: 139px;
+			height: 209px;
+		}
+		figure {
+			grid-template-columns: 139px auto;
+		}
+	}
+	@media (max-width: 600px){
+		main {
+			grid-template-columns: repeat(2, auto);
+			row-gap: 0%;
+		}
+		main > :nth-child(3n +2){
+			margin-top: 0px;
+		}
+		main > :nth-child(2n + 2){
+			margin-top: 66px;
+		}
+		figure {
+			grid-template-rows: 209px 21px;
+		}
+		figure > figcaption {
+			margin-top: 10px;
+			font-size: 14px;
+			height: max-content;
+		}
+	}
 </style>
