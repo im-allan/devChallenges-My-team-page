@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import photo1 from "../assets/photo1.png";
+import photo2 from "../assets/photo2.png";
+import photo3 from "../assets/photo3.png";
+import photo4 from "../assets/photo4.png";
+import photo5 from "../assets/photo5.png";
+import photo6 from "../assets/photo6.png";
 ---
 
 <Layout title="My team page">
@@ -11,10 +16,43 @@ import Card from '../components/Card.astro';
 			<p>We are team of creatively diverse. driven. innovative individuals working in various locations from the world.</p>
 		</section>
 	</header>
+	<main>
+    <figure>
+      <img src={photo1.src} alt="">
+      <figcaption>Bill Mahoney</figcaption>
+			<span>Product owner</span>
+    </figure>
+    <figure>
+      <img src={photo2.src} alt="">
+      <figcaption>Saba Cabrera</figcaption>
+			<span>Art director</span>
+    </figure>
+    <figure>
+			<img src={photo3.src} alt="">
+      <figcaption>Shae Le</figcaption>
+			<span>Tech Lead</span>
+    </figure>
+    <figure>
+			<img src={photo4.src} alt="">
+      <figcaption>Skylah Lu</figcaption>
+			<span>UX Designer</span>
+    </figure>
+    <figure>
+			<img src={photo5.src} alt="">
+      <figcaption>Griff Richards</figcaption>
+			<span>Developer</span>
+    </figure>
+    <figure>
+			<img src={photo6.src} alt="">
+      <figcaption>Stan John</figcaption>
+			<span>Developer</span>
+    </figure>
+  </main>
 </Layout>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins&display=swap');
+	/* Header */
 	header {
 		display: flex;
 		flex-direction: row;
@@ -29,7 +67,8 @@ import Card from '../components/Card.astro';
 		font-size: 36px;
 		font-weight: 700;
 		letter-spacing: -1.62px;
-		width: 439px;
+		width: fit-content;
+		margin-bottom: 38px;
 	}
 	header > section {
 		display: grid;
@@ -50,9 +89,101 @@ import Card from '../components/Card.astro';
 		margin-top: 10px;
 	}
 
-	@media (max-width: 768px) {
+	/* Main */
+	main {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		justify-content: center;
+		margin-top: 96px;
+		gap: 5.4%;
+		width: 100%;
+	}
+	main > figure {
+		max-width: 238px;
+		max-height: 347px;
+	}
+
+	figure {
+		column-gap: 10px;
+		display: grid;
+		grid-template-columns: 238px auto;
+		grid-template-rows: repeat(2, auto);
+	}
+
+	figure > span {
+		font-family: 'PT Serif', serif;
+		font-size: 12px;
+		grid-column: 2;
+		grid-row: 1 / 4;
+		height: fit-content;
+		line-height: normal;
+		text-transform: uppercase;
+		width: fit-content;
+		writing-mode: vertical-lr;
+	}
+
+	figure > figcaption {
+		font-family: 'Poppins', sans-serif;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+		grid-column: 1 / 4;
+		grid-row: 2;
+		line-height: normal;
+		width: fit-content;
+	}
+
+	figure > img {
+		max-width: 100%;
+		max-height: 347px;
+		overflow: clip;
+	}
+
+	main > :nth-child(3n +2){
+		margin-top: 66px;
+	}
+
+	/* Media */
+
+	@media (max-width: 800px) {
 		section > p {
 			font-size: 14px;
+		}
+		header {
+			width: 95%;
+			margin: 71px auto auto auto;
+			justify-content: baseline;
+		}
+		header > h1 {
+			width: 439px;
+		}
+
+		figure > img {
+			width: 139px;
+			height: 209px;
+		}
+		figure {
+			grid-template-columns: 139px auto;
+		}
+	}
+	@media (max-width: 600px){
+		main {
+			grid-template-columns: repeat(2, auto);
+			row-gap: 0%;
+		}
+		main > :nth-child(3n +2){
+			margin-top: 0px;
+		}
+		main > :nth-child(2n + 2){
+			margin-top: 66px;
+		}
+		figure {
+			grid-template-rows: 209px 21px;
+		}
+		figure > figcaption {
+			margin-top: 10px;
+			font-size: 14px;
+			height: max-content;
 		}
 	}
 </style>
